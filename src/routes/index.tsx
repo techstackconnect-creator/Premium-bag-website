@@ -50,11 +50,6 @@ const BESTSELLERS: Product[] = [
   { name: "Noir Biker", category: "Jackets", price: "€1,290", image: jacket1 },
 ];
 
-const JACKETS: Product[] = [
-  { name: "Noir Biker", category: "Jackets", price: "€1,290", image: jacket1 },
-  { name: "Cognac Bomber", category: "Jackets", price: "€1,150", image: jacket2 },
-  { name: "Capote Trench", category: "Jackets", price: "€1,690", originalPrice: "€1,890", image: jacket3, sale: true },
-];
 
 const TESTIMONIALS = [
   {
