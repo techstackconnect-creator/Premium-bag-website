@@ -4,6 +4,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { ScrollVideo } from "@/components/home/ScrollVideo";
 import { ProductCard, type Product } from "@/components/home/ProductCard";
+import { JacketScrollShowcase } from "@/components/home/JacketScrollShowcase";
 
 import heroVideo from "@/assets/hero.mp4.asset.json";
 import preFooterVideo from "@/assets/prefooter.mp4.asset.json";
@@ -49,11 +50,6 @@ const BESTSELLERS: Product[] = [
   { name: "Noir Biker", category: "Jackets", price: "€1,290", image: jacket1 },
 ];
 
-const JACKETS: Product[] = [
-  { name: "Noir Biker", category: "Jackets", price: "€1,290", image: jacket1 },
-  { name: "Cognac Bomber", category: "Jackets", price: "€1,150", image: jacket2 },
-  { name: "Capote Trench", category: "Jackets", price: "€1,690", originalPrice: "€1,890", image: jacket3, sale: true },
-];
 
 const TESTIMONIALS = [
   {
@@ -211,20 +207,9 @@ function Home() {
         </div>
       </section>
 
-      {/* JACKETS */}
-      <section className="py-24 md:py-32">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
-          <div className="text-center mb-16">
-            <p className="eyebrow mb-4">— La Collection —</p>
-            <h2 className="font-display text-4xl md:text-5xl" style={{ color: "#F5EFE6" }}>
-              Leather Jackets
-            </h2>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            {JACKETS.map((p) => <ProductCard key={p.name} p={p} />)}
-          </div>
-        </div>
-      </section>
+      {/* JACKETS — Scroll-Animated Showcase */}
+      <JacketScrollShowcase />
+
 
       {/* SCROLL VIDEO */}
       <ScrollVideo />
