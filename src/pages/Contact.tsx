@@ -1,18 +1,13 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { usePageMeta } from "@/hooks/use-page-meta";
 
-export const Route = createFileRoute("/contact")({
-  head: () => ({
-    meta: [
-      { title: "Contact — Maison du Cuir" },
-      { name: "description", content: "Get in touch with the Maison du Cuir atelier." },
-    ],
-  }),
-  component: Contact,
-});
+export default function Contact() {
+  usePageMeta(
+    "Contact — Maison du Cuir",
+    "Get in touch with the Maison du Cuir atelier.",
+  );
 
-function Contact() {
   return (
     <div className="min-h-screen" style={{ background: "#0D0B09" }}>
       <Navbar />

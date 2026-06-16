@@ -1,10 +1,10 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { ChevronDown, Star } from "lucide-react";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { ScrollVideo } from "@/components/home/ScrollVideo";
 import { ProductCard, type Product } from "@/components/home/ProductCard";
 import { JacketScrollShowcase } from "@/components/home/JacketScrollShowcase";
+import { usePageMeta } from "@/hooks/use-page-meta";
 
 import heroVideo from "@/assets/hero.mp4";
 import preFooterVideo from "@/assets/prefooter.mp4";
@@ -22,25 +22,6 @@ import mosaic3 from "@/assets/mosaic-3.jpg";
 import mosaic4 from "@/assets/mosaic-4.jpg";
 import storyPortrait from "@/assets/story-portrait.jpg";
 
-export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "Maison du Cuir — Cuir, Style, Présence" },
-      {
-        name: "description",
-        content:
-          "Handcrafted leather bags, wallets, belts and jackets. A contemporary vision of premium leather since 2012.",
-      },
-      { property: "og:title", content: "Maison du Cuir — Cuir, Style, Présence" },
-      {
-        property: "og:description",
-        content: "Handcrafted leather goods. Designed in France since 2012.",
-      },
-    ],
-  }),
-  component: Home,
-});
-
 const BESTSELLERS: Product[] = [
   { name: "Astride Tote", category: "Bags", price: "€485", originalPrice: "€590", image: bag1, sale: true },
   { name: "Léon Crossbody", category: "Bags", price: "€345", image: bag2 },
@@ -49,7 +30,6 @@ const BESTSELLERS: Product[] = [
   { name: "Sangle No. 4", category: "Belts", price: "€185", originalPrice: "€220", image: belt, sale: true },
   { name: "Noir Biker", category: "Jackets", price: "€1,290", image: jacket1 },
 ];
-
 
 const TESTIMONIALS = [
   {
@@ -77,7 +57,12 @@ const MARQUEE_ITEMS = [
   "MADE IN FRANCE",
 ];
 
-function Home() {
+export default function Home() {
+  usePageMeta(
+    "Maison du Cuir — Cuir, Style, Présence",
+    "Handcrafted leather bags, wallets, belts and jackets. A contemporary vision of premium leather since 2012.",
+  );
+
   return (
     <div className="min-h-screen" style={{ background: "#0D0B09" }}>
       <Navbar />
@@ -207,11 +192,7 @@ function Home() {
         </div>
       </section>
 
-      {/* JACKETS — Scroll-Animated Showcase */}
       <JacketScrollShowcase />
-
-
-      {/* SCROLL VIDEO */}
       <ScrollVideo />
 
       {/* TESTIMONIALS */}

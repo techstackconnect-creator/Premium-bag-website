@@ -1,18 +1,13 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { usePageMeta } from "@/hooks/use-page-meta";
 
-export const Route = createFileRoute("/story")({
-  head: () => ({
-    meta: [
-      { title: "Our Story — Maison du Cuir" },
-      { name: "description", content: "Born from a love of leather. Discover the story behind Maison du Cuir." },
-    ],
-  }),
-  component: Story,
-});
+export default function Story() {
+  usePageMeta(
+    "Our Story — Maison du Cuir",
+    "Born from a love of leather. Discover the story behind Maison du Cuir.",
+  );
 
-function Story() {
   return (
     <div className="min-h-screen" style={{ background: "#0D0B09" }}>
       <Navbar />
