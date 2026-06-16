@@ -6,8 +6,8 @@ import { ScrollVideo } from "@/components/home/ScrollVideo";
 import { ProductCard, type Product } from "@/components/home/ProductCard";
 import { JacketScrollShowcase } from "@/components/home/JacketScrollShowcase";
 
-import heroVideo from "@/assets/hero.mp4.asset.json";
-import preFooterVideo from "@/assets/prefooter.mp4.asset.json";
+import heroVideo from "@/assets/hero.mp4";
+import preFooterVideo from "@/assets/prefooter.mp4";
 import bag1 from "@/assets/product-bag-1.jpg";
 import bag2 from "@/assets/product-bag-2.jpg";
 import bag3 from "@/assets/product-bag-3.jpg";
@@ -85,7 +85,7 @@ function Home() {
       {/* HERO */}
       <section className="relative h-screen w-full overflow-hidden grain">
         <video
-          src={heroVideo.url}
+          src={heroVideo}
           autoPlay
           muted
           loop
@@ -292,7 +292,7 @@ function Home() {
       <section className="py-20" style={{ background: "#1A1410" }}>
         <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
           <div className="aspect-video overflow-hidden rounded-[4px] border border-[rgba(201,169,110,0.25)]">
-            <video src={preFooterVideo.url} autoPlay muted loop playsInline className="w-full h-full object-cover" />
+            <video src={preFooterVideo} autoPlay muted loop playsInline className="w-full h-full object-cover" />
           </div>
           <div className="text-center mt-12">
             <h3 className="font-display italic text-3xl md:text-5xl mb-6" style={{ color: "#F5EFE6" }}>

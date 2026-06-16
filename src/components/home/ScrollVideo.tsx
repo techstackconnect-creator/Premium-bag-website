@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import scrollVideo from "@/assets/scroll.mp4.asset.json";
+import scrollVideo from "@/assets/scroll.mp4";
 
 const MILESTONES = [
   { from: 0, to: 0.28, text: "Every stitch tells a story." },
@@ -54,7 +54,7 @@ export function ScrollVideo() {
       <div className="sticky top-0 h-screen w-full overflow-hidden">
         <video
           ref={videoRef}
-          src={scrollVideo.url}
+          src={scrollVideo}
           muted
           playsInline
           preload="auto"
